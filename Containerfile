@@ -2,13 +2,15 @@ FROM registry.fedoraproject.org/fedora-toolbox:38
 
 # COPY vscode.repo /etc/yum.repos.d/
 
-# RUN dnf -y upgrade
+RUN dnf -y upgrade
 
-# COPY extra-packages /
-# RUN dnf -y install $(<extra-packages)
-# RUN rm /extra-packages
+COPY extra-packages /
+RUN dnf -y install $(<extra-packages)
+RUN rm /extra-packages
 
-# RUN dnf clean all
+RUN dnf clean all
+
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/bin
 
 
 COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
