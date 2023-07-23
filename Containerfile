@@ -10,7 +10,7 @@ RUN rm /extra-packages
 
 RUN dnf clean all
 
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/bin
+RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/bin
 
 
 COPY --from=cgr.dev/chainguard/cosign:latest /usr/bin/cosign /usr/bin/cosign
