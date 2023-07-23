@@ -1,5 +1,5 @@
 # The image will be at "ghcr.io/yourusername/name".
-name: lunchbox
+name: utensils
 
 # The native container image to build on top of.
 # Warning: Non-uBlue images might not work properly, due to missing components.
