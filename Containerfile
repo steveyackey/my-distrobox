@@ -21,3 +21,5 @@ COPY --from=cgr.dev/chainguard/kubectl:latest /usr/bin/kubectl /usr/bin/kubectl
 RUN curl -Lo ./kind "https://github.com/kubernetes-sigs/kind/releases/latest/download/kind-$(uname)-amd64"
 RUN chmod +x ./kind
 RUN mv ./kind /usr/bin/kind
+
+RUN curl -sL https://talos.dev/install | sh
