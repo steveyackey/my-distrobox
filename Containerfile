@@ -1,8 +1,7 @@
 FROM registry.fedoraproject.org/fedora-toolbox:38
 
-# COPY vscode.repo /etc/yum.repos.d/
+COPY vscode.repo /etc/yum.repos.d/
 
-RUN echo 'utensils' > /etc/hostname
 RUN dnf -y upgrade
 
 COPY extra-packages /
